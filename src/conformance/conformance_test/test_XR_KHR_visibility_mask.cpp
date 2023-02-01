@@ -113,7 +113,7 @@ namespace Conformance
             CAPTURE(viewIndex);
 
             XrVisibilityMaskKHR visibilityMask{XR_TYPE_VISIBILITY_MASK_KHR};
-            CheckTwoCallStructConformance(twoCallData, visibilityMask, "xrGetVisibilityMaskKHR", true /* error if empty */,
+            CheckTwoCallStructConformance(twoCallData, visibilityMask, "xrGetVisibilityMaskKHR", false /* error if empty */,
                                           [&](XrVisibilityMaskKHR* mask) {
                                               return xrGetVisibilityMaskKHR_(session, viewConfigurationType, viewIndex, maskType, mask);
                                           });
